@@ -20,7 +20,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "daisyui": "^5.0.28",
-    "rippleui": "^1.12.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

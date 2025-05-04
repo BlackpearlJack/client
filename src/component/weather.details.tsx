@@ -1,9 +1,21 @@
-import React from 'react'
-
 const WeatherDetails = () => {
   return (
-    <div>weatherDetails</div>
-  )
-}
+    <div className="text-white">
+      <h3 className="uppercase mb-2 text-sm">Weather Details</h3>
+      <div className="flex justify-between mb-1">
+        <span>Cloudy</span>
+        <span>86%</span>
+      </div>
+      <div className="flex justify-between mb-1">
+        <span>Humidity</span>
+        <span>62%</span>
+      </div>
+      <div className="flex justify-between">
+        <span>Wind</span>
+        <span>8km/h</span>
+      </div>
+    </div>
+  );
+};
 
-export default WeatherDetails
+export default WeatherDetails;
