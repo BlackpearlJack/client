@@ -16,8 +16,10 @@ const WeatherInfo = ({ details }: WeatherDetailsProps) => {
   return (
     <div className="card bg-transparent text-white shadow-md shadow-base-200">
       <div className="card-body">
+        {/* weather details title */}
         <h2 className="card-title text-orange-400">Weather Details</h2>
         <div className="grid grid-cols-1 gap-2 mt-2">
+          {/* maps the weather details to a list of objects, each containing a label and value */}
           {weatherDetails.map((detail, index) => (
             <div
               key={index}

@@ -10,7 +10,8 @@ interface WeatherDisplayProps {
 
 const WeatherDisplay = ({ weather, loading }: WeatherDisplayProps) => {
   return (
-    <div className="p-10">
+    <div className="p-10">      
+      {/* Display loading state or weather data */}
       {loading ? (
         <p className="text-white">Loading weather...</p>
       ) : weather ? (

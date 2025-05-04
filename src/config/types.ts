@@ -1,3 +1,6 @@
+// Weather API configuration types
+
+// WeatherData type to represent weather information
 export type WeatherData = {
     temperature: number;
     unit: "C" | "F";
@@ -8,6 +11,7 @@ export type WeatherData = {
     icon?: string;
 }
 
+// WeatherDetails type to represent detailed weather information
 export type WeatherDetails = {
     wind_speed: number;
     humidity: number;
