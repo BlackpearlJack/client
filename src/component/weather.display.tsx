@@ -1,6 +1,6 @@
 import React from 'react'
 
-const weatherDisplay = () => {
+const WeatherDisplay = () => {
   return (
     <div className="">
         Weather Display
@@ -8,4 +8,4 @@ const weatherDisplay = () => {
   )
 }
 
-export default weatherDisplay
+export default WeatherDisplay

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const locationSearch = () => {
+const LocationSearch = () => {
   return (
     <div>locationSearch</div>
   )
 }
 
-export default locationSearch
+export default LocationSearch

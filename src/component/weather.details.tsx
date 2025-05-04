@@ -1,9 +1,9 @@
 import React from 'react'
 
-const weatherDetails = () => {
+const WeatherDetails = () => {
   return (
     <div>weatherDetails</div>
   )
 }
 
-export default weatherDetails
+export default WeatherDetails
