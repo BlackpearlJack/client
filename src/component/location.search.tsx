@@ -3,34 +3,27 @@
 import { FaSearch } from "react-icons/fa";
 import WeatherInfo from "./weather.details";
 import { WeatherDetails } from "@/config/types";
-import { useState, useEffect } from "react";
-import { getWeatherInfo } from "@/util/getWeatherInfo";
+import { useState } from "react";
 
-const LocationSearch = () => {
-  const [weather, setWeather] = useState<WeatherDetails | null>(null);
-  const [loading, setLoading] = useState(false);
+interface LocationSearchProps {
+  onSelectCity: (city: string) => void;
+  details: WeatherDetails | null;
+  loading: boolean;
+}
+
+const LocationSearch = ({ onSelectCity, details, loading }: LocationSearchProps) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [cities, setCities] = useState(["Birmingham", "Manchester", "New York", "California"]);
-
-  useEffect(() => {
-    getWeatherInfo("Nairobi").then((data) => {
-      setWeather(data);
-      setLoading(false);
-    });
-  }, []);
+  const cities = ["Nairobi", "Kisumu", "Mombasa", "Cairo"];
 
   const handleSearch = () => {
-    getWeatherInfo(searchTerm).then((data) => {
-      setWeather(data);
-      setLoading(false);
-    });
+    const term = searchTerm.trim();
+    if (!term) return;
+    onSelectCity(term);
+    setSearchTerm("");
   };
 
   const handleCityClick = (city: string) => {
-    getWeatherInfo(city).then((data) => {
-      setWeather(data);
-      setLoading(false);
-    });
+    onSelectCity(city);
   };
 
   return (
@@ -54,16 +47,20 @@ const LocationSearch = () => {
 
       <ul className="space-y-2 mb-6 text-white">
         {cities.map((city) => (
-          <li key={city} className="hover:underline cursor-pointer" onClick={() => handleCityClick(city)}>
+          <li
+            key={city}
+            className="hover:underline cursor-pointer"
+            onClick={() => handleCityClick(city)}
+          >
             {city}
           </li>
         ))}
       </ul>
 
       {loading ? (
-        <p>Loading...</p>
+        <p className="text-white">Loading...</p>
       ) : (
-        weather && <WeatherInfo details={weather} />
+        details && <WeatherInfo details={details} />
       )}
     </>
   );

@@ -6,27 +6,30 @@ interface WeatherDetailsProps {
 
 const WeatherInfo = ({ details }: WeatherDetailsProps) => {
   const weatherDetails = [
-    { label: "Cloudy", value: `${details.cloudy} %` },
+    { label: "Cloudiness", value: `${details.cloudy} %` },
     { label: "Humidity", value: `${details.humidity} %` },
-    { label: "Wind", value: `${details.wind_speed} m/s` },
-    { label: "Rain", value: `${details.rain} mm` },
+    { label: "Wind Speed", value: `${details.wind_speed} m/s` },
+    { label: "Rainfall", value: `${details.rain} mm` },
     { label: "Visibility", value: `${details.visibility} km` },
   ];
 
   return (
-    <div className="card bg-transparent shadow-xl text-white shadow-base-200">
-      <div className="card-body p-6">
-        <h3 className="card-title text-lg uppercase text-primary-content tracking-wider mb-3">
-          Weather Details
-        </h3>
-        <ul className="space-y-2">
+    <div className="card bg-transparent text-white shadow-md shadow-base-200">
+      <div className="card-body">
+        <h2 className="card-title text-orange-400">Weather Details</h2>
+        <div className="grid grid-cols-1 gap-2 mt-2">
           {weatherDetails.map((detail, index) => (
-            <li key={index} className="flex justify-between py-2 text-sm">
-              <span className="text-gray-100">{detail.label}</span>
-              <span className="font-medium text-gray-100">{detail.value}</span>
-            </li>
+            <div
+              key={index}
+              className="flex justify-between items-center p-2 rounded"
+            >
+              <span className="font-medium">{detail.label}</span>
+              <span className="badge badge-primary badge-outline">
+                {detail.value}
+              </span>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
