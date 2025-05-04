@@ -3,6 +3,7 @@ export type WeatherData = {
     unit: "C" | "F";
     condition: string;
     location: string;
-    region: string;
+    region?: string;
+    country: string;
     icon?: string;
 }
