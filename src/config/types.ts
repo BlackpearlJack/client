@@ -8,10 +8,10 @@ export type WeatherData = {
     icon?: string;
 }
 
-export type Details = {
+export type WeatherDetails = {
     wind_speed: number;
     humidity: number;
-    cloudiness: number;
+    cloudy: number;
     rain: number;
     visibility: number;
 }
