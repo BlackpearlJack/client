@@ -10,13 +10,13 @@ export async function getWeather(city: string): Promise<WeatherData | null> {
     const data = await response.json();
 
     return {
-      temperature: data.main.temp,
-      unit: "C",
-      condition: data.weather[0].description,
-      icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
-      location: data.name,
-      region: "", // OpenWeatherMap might not provide this directly
-      country: data.sys.country,
+      temperature: data.temperature,
+      unit: data.unit,
+      condition: data.condition,
+      icon: data.icon,
+      location: data.location,
+      region: data.region,
+      country: data.country,
     };
   } catch (error) {
     console.error("Weather fetch error:", error);

@@ -5,7 +5,7 @@ type WeatherCardProps = {
   weather: WeatherData;
 };
 
-export default function WeatherCard({ weather }: WeatherCardProps) {
+export default function WeatherCard( {weather }: WeatherCardProps) {
   return (
     <div className="card glass w-72 p-2.5 text-base-content shadow-md shadow-base-200">
       <div className="flex justify-between items-center">
@@ -37,7 +37,7 @@ export default function WeatherCard({ weather }: WeatherCardProps) {
       <div className="mt-4">
         <div className="text-md font-medium truncate">{weather.location}</div>
         <div className="text-sm text-base-content/60">
-          {[weather.region, weather.country].filter(Boolean).join(", ")}
+          {weather.country}, {weather.region}
         </div>
       </div>
     </div>

@@ -7,3 +7,11 @@ export type WeatherData = {
     country: string;
     icon?: string;
 }
+
+export type Details = {
+    wind_speed: number;
+    humidity: number;
+    cloudiness: number;
+    rain: number;
+    visibility: number;
+}
